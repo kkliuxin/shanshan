@@ -9,9 +9,9 @@ import java.lang.reflect.Method;
 public class MyInvocationHandler implements InvocationHandler{
 
     //被代理的对象
-    private Subject subject = null;
+    private Object subject = null;
 
-    public MyInvocationHandler(Subject subject) {
+    public MyInvocationHandler(Object subject) {
         this.subject = subject;
     }
 
