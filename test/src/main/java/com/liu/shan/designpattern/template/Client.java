@@ -17,7 +17,7 @@ public class Client {
         if(type.equals("0")){
             h1.setAlarmFalg(false);
         }
-        System.out.println("H1悍马开始启动");
+        System.out.println("H1悍马开始启动。。。。。。。。");
         h1.run();
         System.out.println("H2悍马开始启动");
         h2.run();
