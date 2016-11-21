@@ -8,5 +8,6 @@ public class BeforeAviceImpl extends IAvice {
     @Override
     public void exec() {
         System.out.println("我是前置通知，我被执行了");
+        System.out.println("哇啦啦啦");
     }
 }
