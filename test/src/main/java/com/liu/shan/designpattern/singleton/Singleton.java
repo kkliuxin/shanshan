@@ -5,14 +5,23 @@ package com.liu.shan.designpattern.singleton;
  */
 public class Singleton {
     //饿汉模式
-    private static Singleton singleton  = new Singleton();
+    private static volatile Singleton singleton ;
     private Long cout = 0l;
     private Singleton(){
     }
 
     public static Singleton getSingleton() {
+        if(null == singleton) {
+            synchronized (Singleton.class) {
+                if(null == singleton) {
+                    singleton = new Singleton();
+                }
+            }
+        }
         return singleton;
     }
+
+
     public Long getCout() {
         return cout;
     }
