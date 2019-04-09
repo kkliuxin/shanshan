@@ -9,9 +9,6 @@ public class test {
 
     public static void main(String[] args) throws Exception {
 
-        var ss = "23";
-
-        System.out.println(ss);
     }
 
 
