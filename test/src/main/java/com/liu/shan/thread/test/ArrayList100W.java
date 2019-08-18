@@ -8,9 +8,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ArrayList100W {
-    private static int LIST_LENGTH = 1000000;
+    private static int LIST_LENGTH = 10000000;
     //线程数量
-    private static int THREAD_NUMBER = 1000;
+    private static int THREAD_NUMBER = 200;
     //每个线程读取的list个数
     private static int SLICE_LENGTH = LIST_LENGTH/THREAD_NUMBER;
 
@@ -106,6 +106,25 @@ public class ArrayList100W {
         }
         end = System.currentTimeMillis();
         System.out.println("线程数量:"+THREAD_NUMBER+"(CPU核心*2)花费的时间:"+(end-start)+" milliseconds, "+"type等于2的个数有:"+numberEquals2);
+
+
+        //第五种方法，使用parallelStream
+        AtomicInteger atomicResult = new AtomicInteger(0);
+        start = System.currentTimeMillis();
+        myObjectArrayList.parallelStream().forEach( element ->{
+            if (element.type ==2){
+                atomicResult.addAndGet(1);
+            }
+        });
+        end = System.currentTimeMillis();
+        System.out.println("线程数量(默认为CPU核心数):, 花费的时间:" + (end - start) + " milliseconds, " + "type等于2的个数有:" + atomicResult.get());
+
+        //第五种方法，使用parallelStream
+        start = System.currentTimeMillis();
+        long count = myObjectArrayList.parallelStream().filter(myObject -> myObject.type == 2).count();
+        end = System.currentTimeMillis();
+        System.out.println("线程数量(默认为CPU核心数):, 花费的时间:" + (end - start) + " milliseconds, " + "type等于2的个数有:" + count);
+
     }
 }
 
