@@ -1,10 +1,5 @@
 package com.liu.shan.designpattern.builder;
 
-import com.sun.imageio.plugins.bmp.BMPImageReaderSpi;
-
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by BBF on 2016/11/17.
  */
