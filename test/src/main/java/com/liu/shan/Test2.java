@@ -4,6 +4,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by liuxin on 2017/4/8.
@@ -12,10 +13,13 @@ public class Test2 {
 
 
     public static void main(String[] args) {
+        AtomicInteger atomicInteger = new AtomicInteger();
+        Integer a1 = 12, a2 =21;
+        boolean b = atomicInteger.compareAndSet(a1, a2);
+        System.out.println("a1 = " + a1);
+        System.out.println("a2 = " + a2);
 
 
-        System.out.println(1/3);
-        System.out.println(9/3 == 9/3.0);
     }
 
 }

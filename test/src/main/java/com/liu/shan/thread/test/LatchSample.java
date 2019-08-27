@@ -46,7 +46,7 @@ class SecondBatchWorker implements Runnable {
     @Override
     public void run() {
         try {
-//            latch.await();
+            latch.await();
             System.out.println("Second batch executed!");
         } catch (Exception e) {
             e.printStackTrace();

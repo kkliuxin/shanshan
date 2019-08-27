@@ -1,5 +1,4 @@
 /*
- * Copyright (C) 2019 VIPKID, Inc. All Rights Reserved.
  */
 package com.liu.shan.io;
 
